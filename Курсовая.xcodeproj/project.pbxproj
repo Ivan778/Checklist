@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C76AC161E9A4EB700E19B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */; };
 		2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811A1E97F1280042F882 /* AppDelegate.swift */; };
 		2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */; };
 		2CD881201E97F1280042F882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD8811E1E97F1280042F882 /* Main.storyboard */; };
@@ -15,7 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2CD881171E97F1280042F882 /* Курсовая.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Курсовая.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CD881171E97F1280042F882 /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD8811A1E97F1280042F882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		2CD8811F1E97F1280042F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		2CD881181E97F1280042F882 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CD881171E97F1280042F882 /* Курсовая.app */,
+				2CD881171E97F1280042F882 /* Checklist.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +62,7 @@
 				2CD881211E97F1280042F882 /* Assets.xcassets */,
 				2CD881231E97F1280042F882 /* LaunchScreen.storyboard */,
 				2CD881261E97F1280042F882 /* Info.plist */,
+				2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */,
 			);
 			path = "Курсовая";
 			sourceTree = "<group>";
@@ -67,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CD881161E97F1270042F882 /* Курсовая */ = {
+		2CD881161E97F1270042F882 /* Checklist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Курсовая" */;
+			buildConfigurationList = 2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Checklist" */;
 			buildPhases = (
 				2CD881131E97F1270042F882 /* Sources */,
 				2CD881141E97F1270042F882 /* Frameworks */,
@@ -79,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = "Курсовая";
+			name = Checklist;
 			productName = "Курсовая";
-			productReference = 2CD881171E97F1280042F882 /* Курсовая.app */;
+			productReference = 2CD881171E97F1280042F882 /* Checklist.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Курсовая" */;
+			buildConfigurationList = 2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Checklist" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -114,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CD881161E97F1270042F882 /* Курсовая */,
+				2CD881161E97F1270042F882 /* Checklist */,
 			);
 		};
 /* End PBXProject section */
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CD881251E97F1280042F882 /* LaunchScreen.storyboard in Resources */,
+				2C76AC161E9A4EB700E19B8E /* GoogleService-Info.plist in Resources */,
 				2CD881221E97F1280042F882 /* Assets.xcassets in Resources */,
 				2CD881201E97F1280042F882 /* Main.storyboard in Resources */,
 			);
@@ -204,7 +208,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -247,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -286,7 +290,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Курсовая" */ = {
+		2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Checklist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD881271E97F1280042F882 /* Debug */,
@@ -295,13 +299,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Курсовая" */ = {
+		2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Checklist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD8812A1E97F1280042F882 /* Debug */,
 				2CD8812B1E97F1280042F882 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
