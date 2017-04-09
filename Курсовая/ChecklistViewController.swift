@@ -59,5 +59,20 @@ class ChecklistViewController: UITableViewController {
         return cell
     }
     
+    //Метод следит за нажатиями на элементы TableView
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            if cell.accessoryType == .none {
+                cell.accessoryType = .checkmark
+            }
+            else {
+                cell.accessoryType = .none
+            }
+        }
+        
+        //Если мы нажали на элемент, он становится серым. Чтобы убрать этот эффект, воспользуемся следующим методом
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 

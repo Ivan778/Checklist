@@ -13,17 +13,22 @@
 		2CD881201E97F1280042F882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD8811E1E97F1280042F882 /* Main.storyboard */; };
 		2CD881221E97F1280042F882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD881211E97F1280042F882 /* Assets.xcassets */; };
 		2CD881251E97F1280042F882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD881231E97F1280042F882 /* LaunchScreen.storyboard */; };
+		B41574005479289E5BE62C7C /* Pods_________.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB055D87CFC9C07B376B198 /* Pods_________.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2CD881171E97F1280042F882 /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB055D87CFC9C07B376B198 /* Pods_________.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_________.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC5C36E1E9A847F007483B7 /* Курсовая.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Курсовая.entitlements"; sourceTree = "<group>"; };
+		2CD881171E97F1280042F882 /* Курсовая.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Курсовая.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD8811A1E97F1280042F882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		2CD8811F1E97F1280042F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CD881211E97F1280042F882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD881241E97F1280042F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD881261E97F1280042F882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E206F747640B9E5AEBE2551 /* Pods-Курсовая.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Курсовая.release.xcconfig"; path = "Pods/Target Support Files/Pods-Курсовая/Pods-Курсовая.release.xcconfig"; sourceTree = "<group>"; };
+		A208FE1921DFD51C2D7CE074 /* Pods-Курсовая.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Курсовая.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Курсовая/Pods-Курсовая.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41574005479289E5BE62C7C /* Pods_________.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,13 +48,15 @@
 			children = (
 				2CD881191E97F1280042F882 /* Курсовая */,
 				2CD881181E97F1280042F882 /* Products */,
+				8C816BCF90B487371D37F700 /* Pods */,
+				411C6CD3BA501832DBE79D45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		2CD881181E97F1280042F882 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CD881171E97F1280042F882 /* Checklist.app */,
+				2CD881171E97F1280042F882 /* Курсовая.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +64,7 @@
 		2CD881191E97F1280042F882 /* Курсовая */ = {
 			isa = PBXGroup;
 			children = (
+				2CC5C36E1E9A847F007483B7 /* Курсовая.entitlements */,
 				2CD8811A1E97F1280042F882 /* AppDelegate.swift */,
 				2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */,
 				2CD8811E1E97F1280042F882 /* Main.storyboard */,
@@ -67,24 +76,44 @@
 			path = "Курсовая";
 			sourceTree = "<group>";
 		};
+		411C6CD3BA501832DBE79D45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CB055D87CFC9C07B376B198 /* Pods_________.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C816BCF90B487371D37F700 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A208FE1921DFD51C2D7CE074 /* Pods-Курсовая.debug.xcconfig */,
+				8E206F747640B9E5AEBE2551 /* Pods-Курсовая.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CD881161E97F1270042F882 /* Checklist */ = {
+		2CD881161E97F1270042F882 /* Курсовая */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Checklist" */;
+			buildConfigurationList = 2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Курсовая" */;
 			buildPhases = (
+				7F7851451C53476B78A135C4 /* [CP] Check Pods Manifest.lock */,
 				2CD881131E97F1270042F882 /* Sources */,
 				2CD881141E97F1270042F882 /* Frameworks */,
 				2CD881151E97F1270042F882 /* Resources */,
+				F5F249C1F2C59C06997D5651 /* [CP] Embed Pods Frameworks */,
+				3F57F552C56B6B33F252453B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Checklist;
+			name = "Курсовая";
 			productName = "Курсовая";
-			productReference = 2CD881171E97F1280042F882 /* Checklist.app */;
+			productReference = 2CD881171E97F1280042F882 /* Курсовая.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,10 +130,15 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = JXCL7H2Z3W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = 2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Checklist" */;
+			buildConfigurationList = 2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Курсовая" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -117,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CD881161E97F1270042F882 /* Checklist */,
+				2CD881161E97F1270042F882 /* Курсовая */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +169,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F57F552C56B6B33F252453B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Курсовая/Pods-Курсовая-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F7851451C53476B78A135C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5F249C1F2C59C06997D5651 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Курсовая/Pods-Курсовая-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CD881131E97F1270042F882 /* Sources */ = {
@@ -261,6 +343,7 @@
 		};
 		2CD8812A1E97F1280042F882 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A208FE1921DFD51C2D7CE074 /* Pods-Курсовая.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JXCL7H2Z3W;
@@ -275,6 +358,7 @@
 		};
 		2CD8812B1E97F1280042F882 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E206F747640B9E5AEBE2551 /* Pods-Курсовая.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JXCL7H2Z3W;
@@ -290,7 +374,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Checklist" */ = {
+		2CD881121E97F1270042F882 /* Build configuration list for PBXProject "Курсовая" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD881271E97F1280042F882 /* Debug */,
@@ -299,7 +383,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Checklist" */ = {
+		2CD881291E97F1280042F882 /* Build configuration list for PBXNativeTarget "Курсовая" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD8812A1E97F1280042F882 /* Debug */,
