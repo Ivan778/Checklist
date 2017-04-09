@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811A1E97F1280042F882 /* AppDelegate.swift */; };
-		2CD8811D1E97F1280042F882 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811C1E97F1280042F882 /* ViewController.swift */; };
+		2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */; };
 		2CD881201E97F1280042F882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD8811E1E97F1280042F882 /* Main.storyboard */; };
 		2CD881221E97F1280042F882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD881211E97F1280042F882 /* Assets.xcassets */; };
 		2CD881251E97F1280042F882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD881231E97F1280042F882 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		2CD881171E97F1280042F882 /* Курсовая.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Курсовая.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD8811A1E97F1280042F882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CD8811C1E97F1280042F882 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		2CD8811F1E97F1280042F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CD881211E97F1280042F882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD881241E97F1280042F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD8811A1E97F1280042F882 /* AppDelegate.swift */,
-				2CD8811C1E97F1280042F882 /* ViewController.swift */,
+				2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */,
 				2CD8811E1E97F1280042F882 /* Main.storyboard */,
 				2CD881211E97F1280042F882 /* Assets.xcassets */,
 				2CD881231E97F1280042F882 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CD8811D1E97F1280042F882 /* ViewController.swift in Sources */,
+				2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */,
 				2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +261,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JXCL7H2Z3W;
 				INFOPLIST_FILE = "Курсовая/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IvanCode.--------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,6 +275,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JXCL7H2Z3W;
 				INFOPLIST_FILE = "Курсовая/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IvanCode.--------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
