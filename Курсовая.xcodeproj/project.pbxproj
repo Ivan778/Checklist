@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C560B401E9BEE19003DB95E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */; };
 		2C76AC161E9A4EB700E19B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */; };
 		2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811A1E97F1280042F882 /* AppDelegate.swift */; };
 		2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CB055D87CFC9C07B376B198 /* Pods_________.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_________.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC5C36E1E9A847F007483B7 /* Курсовая.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Курсовая.entitlements"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				2CD881231E97F1280042F882 /* LaunchScreen.storyboard */,
 				2CD881261E97F1280042F882 /* Info.plist */,
 				2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */,
+				2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */,
 			);
 			path = "Курсовая";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */,
 				2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */,
+				2C560B401E9BEE19003DB95E /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

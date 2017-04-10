@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
+        /*
         FIRAuth.auth()?.signIn(withEmail: "helloworld@gmail.com", password: "12345678") { (user, error) in
             if error == nil {
                 print(user?.email)
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.debugDescription)
             }
         }
+        */
         
         return true
     }
