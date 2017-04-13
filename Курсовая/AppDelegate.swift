@@ -15,16 +15,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
-        /*
-        FIRAuth.auth()?.signIn(withEmail: "helloworld@gmail.com", password: "12345678") { (user, error) in
-            if error == nil {
-                print(user?.email)
-            } else {
-                print(error.debugDescription)
-            }
+        //Этот кусок кода используется для того, чтобы устанавливать точку входа (ViewController)
+        //Если пользователь уже заходил в приложение до этого, то точка входа - View Controller с таблицей
+        if UserDefaults.standard.bool(forKey: "loggedIn") == true {
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let toDoVC = mainStoryboard.instantiateViewController(withIdentifier: "ToDoVC")
+            appDelegate.window?.rootViewController = toDoVC
+            appDelegate.window?.makeKeyAndVisible()
+            
+            
+            
+            
         }
-        */
+        //Если пользователь не заходил в приложение до этого или вышел из своего аккаунта, то точка входа - View Controller с регистрацией
+        else if UserDefaults.standard.bool(forKey: "loggedIn") == false {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC")
+            appDelegate.window?.rootViewController = loginVC
+            appDelegate.window?.makeKeyAndVisible()
+        }
+        FIRApp.configure()
         
         return true
     }

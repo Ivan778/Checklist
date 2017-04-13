@@ -50,23 +50,42 @@ class SignInViewController: UIViewController {
         
     }
     
+    //Функция, которая сохраняет на устройстве введённый пароль и e-mail
+    func savePasswordAndEmail() -> Void {
+        UserDefaults.standard.set(true, forKey: "loggedIn")
+        UserDefaults.standard.synchronize()
+        UserDefaults.standard.setValue(self.emailTextField.text, forKey: "userEmail")
+        UserDefaults.standard.synchronize()
+        UserDefaults.standard.setValue(self.passwordTextField.text, forKey: "userPassword")
+        UserDefaults.standard.synchronize()
+    }
+    
+    //Создаёт или входит в аккаунт пользователя по нажатию на Зарегистрироваться/Войти
     @IBAction func createAccount(sender: AnyObject) {
         FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 self.login()
             } else {
-                print("User created!")
                 self.login()
+                print("User created!")
             }
         }
     }
     
+    //Обеспечивает регистрацию/вход в аккаунт пользователя
     func login() {
         FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 print("Problems with signing in!");
             } else {
                 print("Signed succesfully!")
+                self.savePasswordAndEmail()
+                
+                //Очищаем поля ввода e-mail и пароля
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
+                //Выполняем переход в основной ViewControlle
+                self.performSegue(withIdentifier: "MyFirstTable", sender: self)
             }
         }
     }
