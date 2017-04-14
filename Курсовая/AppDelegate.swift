@@ -18,17 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Этот кусок кода используется для того, чтобы устанавливать точку входа (ViewController)
         //Если пользователь уже заходил в приложение до этого, то точка входа - View Controller с таблицей
         if UserDefaults.standard.bool(forKey: "loggedIn") == true {
-            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let toDoVC = mainStoryboard.instantiateViewController(withIdentifier: "ToDoVC")
             appDelegate.window?.rootViewController = toDoVC
             appDelegate.window?.makeKeyAndVisible()
-            
-            
-            
-            
         }
         //Если пользователь не заходил в приложение до этого или вышел из своего аккаунта, то точка входа - View Controller с регистрацией
         else if UserDefaults.standard.bool(forKey: "loggedIn") == false {

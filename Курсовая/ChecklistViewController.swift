@@ -96,10 +96,5 @@ class ChecklistViewController: UITableViewController {
         }
     }
     
-    @IBAction func logOut(sender: AnyObject) {
-        UserDefaults.standard.set(false, forKey: "loggedIn")
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
 

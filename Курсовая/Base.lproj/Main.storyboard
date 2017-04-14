@@ -73,7 +73,7 @@
                         <outlet property="emailTextField" destination="SvE-da-ZjK" id="dYu-IF-SfQ"/>
                         <outlet property="passwordTextField" destination="pYa-bx-qFc" id="csX-H8-wBU"/>
                         <outlet property="registerButton" destination="HtX-rU-Fdd" id="Y3p-j8-opK"/>
-                        <segue destination="rN8-aL-IW3" kind="show" identifier="MyFirstTable" id="Dg4-Is-H3r"/>
+                        <segue destination="rN8-aL-IW3" kind="presentation" identifier="MyFirstTable" modalTransitionStyle="coverVertical" id="Dg4-Is-H3r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fQ-oD-nd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AqA-2i-hNB" id="Ufh-fz-qVq">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="281" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2e-4R-46A">
@@ -115,7 +115,8 @@
                     <navigationItem key="navigationItem" title="Checklist" id="5Pi-Qi-Emv">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="uj9-Kx-xBd">
                             <connections>
-                                <action selector="logOutWithSender:" destination="7Ka-Q5-YI1" id="9Zw-9b-4ry"/>
+                                <action selector="pressedLogOut:" destination="7Ka-Q5-YI1" id="gm4-XD-5iW"/>
+                                <segue destination="MQS-8S-dKn" kind="presentation" modalTransitionStyle="crossDissolve" id="Ghu-uu-PZD"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="U0G-Ld-4t3"/>

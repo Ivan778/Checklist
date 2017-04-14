@@ -48,6 +48,13 @@ class SignInViewController: UIViewController {
         //Делаем так, чтобы клавиатура пряталась по нажатию на что-либо на экране
         self.hideKeyboardWhenTappedAround()
         
+        //Говорим, что пароль ещё не введён
+        UserDefaults.standard.set(false, forKey: "loggedIn")
+        UserDefaults.standard.synchronize()
+        
+        //Очищаем поля ввода e-mail и пароля
+        self.emailTextField.text = ""
+        self.passwordTextField.text = ""
     }
     
     //Функция, которая сохраняет на устройстве введённый пароль и e-mail
@@ -81,9 +88,6 @@ class SignInViewController: UIViewController {
                 print("Signed succesfully!")
                 self.savePasswordAndEmail()
                 
-                //Очищаем поля ввода e-mail и пароля
-                self.emailTextField.text = ""
-                self.passwordTextField.text = ""
                 //Выполняем переход в основной ViewControlle
                 self.performSegue(withIdentifier: "MyFirstTable", sender: self)
             }
