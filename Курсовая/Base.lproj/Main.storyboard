@@ -31,7 +31,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pYa-bx-qFc">
                                 <rect key="frame" x="16" y="311" width="288" height="42"/>
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AqA-2i-hNB" id="Ufh-fz-qVq">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="281" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2e-4R-46A">
@@ -113,18 +113,83 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Checklist" id="5Pi-Qi-Emv">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="uj9-Kx-xBd">
+                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="uj9-Kx-xBd">
                             <connections>
                                 <action selector="pressedLogOut:" destination="7Ka-Q5-YI1" id="gm4-XD-5iW"/>
                                 <segue destination="MQS-8S-dKn" kind="presentation" modalTransitionStyle="crossDissolve" id="Ghu-uu-PZD"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="U0G-Ld-4t3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="U0G-Ld-4t3">
+                            <connections>
+                                <segue destination="Y4z-bi-non" kind="presentation" identifier="AddItem" id="ul7-HN-iGy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsM-mK-Z8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1110" y="94.014084507042256"/>
+        </scene>
+        <!--Новый элемент-->
+        <scene sceneID="qwk-7O-i5y">
+            <objects>
+                <tableViewController id="61J-PO-691" customClass="AddNewItemViewController" customModule="Курсовая" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="smF-hY-fBu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="1ZW-Do-qQp">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3KW-lv-DGg">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3KW-lv-DGg" id="ivO-kT-Urj">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Напишите, что добавить" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjZ-uv-Kqe">
+                                                    <rect key="frame" x="8" y="8" width="304" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="backToChecklistViewControllerAndAddNewItem" destination="61J-PO-691" eventType="editingDidEndOnExit" id="lF3-ek-ff3"/>
+                                                        <outlet property="delegate" destination="61J-PO-691" id="LsF-F7-brJ"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="61J-PO-691" id="icK-8S-DIS"/>
+                            <outlet property="delegate" destination="61J-PO-691" id="WOM-qG-RTj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Новый элемент" id="9eE-aG-GDk">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="gl9-Xs-8yY">
+                            <connections>
+                                <action selector="backToChecklistViewController" destination="61J-PO-691" id="Civ-NZ-NuA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Добавить" id="Mdw-N8-sKD">
+                            <connections>
+                                <action selector="backToChecklistViewControllerAndAddNewItem" destination="61J-PO-691" id="Vxp-ot-fHM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addBarButton" destination="Mdw-N8-sKD" id="Zad-lP-iBv"/>
+                        <outlet property="whatToAddTextField" destination="qjZ-uv-Kqe" id="fJ3-f1-vlB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXP-2u-mfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3105" y="94.014084507042256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tdC-xe-XRA">
@@ -143,6 +208,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1U-ip-6nJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112.5" y="94.014084507042256"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ro1-8c-d4t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y4z-bi-non" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="caS-2A-o7e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="61J-PO-691" kind="relationship" relationship="rootViewController" id="ft8-eL-9ze"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brX-LO-CQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2107.5" y="94.014084507042256"/>
         </scene>
     </scenes>
     <resources>

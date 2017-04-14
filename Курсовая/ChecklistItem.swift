@@ -9,7 +9,7 @@
 import Foundation
 
 class ChecklistItem {
-    private var text: String = ""
+    private var text: String = "Новая ячейка"
     private var state: Bool = false
     
     public func setText(text: String) {

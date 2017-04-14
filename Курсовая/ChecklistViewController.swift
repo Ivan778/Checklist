@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddNewItemViewControllerDelegate {
     //Объявили массив для хранения элементов таблицы
     var items: [ChecklistItem]
     
@@ -40,7 +40,33 @@ class ChecklistViewController: UITableViewController {
         
         super.init(coder: aDecoder)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+            //Чтобы получить требуемый AddNewItemViewController, мы сначала проходим через его NavigationController
+            let navigationController = segue.destination as! UINavigationController
+            //Получаем ссылку на активный ViewController в NavigationController
+            let controller = navigationController.topViewController as! AddNewItemViewController
+            //Теперь, имея ссылку на AddNewItemViewController, говорим ему, что ChecklistViewController (self) и есть получатель
+            controller.delegate = self
+        }
+    }
+    
+    func addItemViewControllerDidCancel(_ controller: AddNewItemViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //Добавляет элемент в таблицу
+    func addItemViewController(_ controller: AddNewItemViewController, didFinishAdding item: ChecklistItem) {
+        //Просто добавив элемент в массив с ячейками, мы не отобразим изменения в таблицы
+        items.append(item)
+        
+        //Поэтому мы сообщаем ей об этом
+        tableView.insertRows(at: [IndexPath(row: items.count - 1, section: 0)], with: .automatic)
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -86,6 +112,7 @@ class ChecklistViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    //Метод следит за отображением галочек напротив текста каждой ячейки таблицы
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         //Выводим галочку, если это нужно
         if item.getState() == true {
@@ -94,6 +121,15 @@ class ChecklistViewController: UITableViewController {
         else {
             cell.accessoryType = .none
         }
+    }
+    
+    //Метод удаляет элемент из таблицы по свайпу
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //Сначала удаляем элемент из массива с элементами
+        items.remove(at: indexPath.row)
+        
+        //Говорим таблице о том, что нужно удалить элемент
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
 }
