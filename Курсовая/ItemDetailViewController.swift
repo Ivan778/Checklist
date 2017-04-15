@@ -1,5 +1,5 @@
 //
-//  AddNewItemViewController.swift
+//  ItemDetailViewController.swift
 //  Курсовая
 //
 //  Created by Иван on 14.04.17.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol AddNewItemViewControllerDelegate: class {
-    func addItemViewControllerDidCancel(_ controller: AddNewItemViewController)
-    func addItemViewController(_ controller: AddNewItemViewController, didFinishAdding item: ChecklistItem)
-    func addItemViewController(_ controller: AddNewItemViewController, didFinishEditing item: ChecklistItem)
+protocol ItemDetailViewControllerDelegate: class {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 
-class AddNewItemViewController: UITableViewController, UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     //Ссылка на нашу кнопку Добавить
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
@@ -22,7 +22,7 @@ class AddNewItemViewController: UITableViewController, UITextFieldDelegate {
     var itemToEdit: ChecklistItem?
     
     //Через неё будем посылать данные для создания новой ячейки
-    weak var delegate: AddNewItemViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,21 +51,21 @@ class AddNewItemViewController: UITableViewController, UITextFieldDelegate {
     
     //Просто возвращаемся в ChecklistViewController
     @IBAction func backToChecklistViewController() {
-        delegate?.addItemViewControllerDidCancel(self)
+        delegate?.itemDetailViewControllerDidCancel(self)
     }
     
     //Возвращаемся в ChecklistViewController и говорим ему добавить в Table View элемент
     @IBAction func backToChecklistViewControllerAndAddNewItem() {
         if let item = itemToEdit {
             item.setText(text: whatToAddTextField.text!)
-            delegate?.addItemViewController(self, didFinishEditing: item)
+            delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             //Создаём ячейку
             let item = ChecklistItem()
             item.setText(text: whatToAddTextField.text!)
             
             //Отправляем её
-            delegate?.addItemViewController(self, didFinishAdding: item)
+            delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
     

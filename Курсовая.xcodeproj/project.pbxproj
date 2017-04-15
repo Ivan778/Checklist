@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C0FC0AA1E9FCB1F005A41B5 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */; };
-		2C479DDA1EA0C13E00414FDC /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C479DD91EA0C13E00414FDC /* AddNewItemViewController.swift */; };
+		2C479DDA1EA0C13E00414FDC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */; };
 		2C560B401E9BEE19003DB95E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */; };
 		2C76AC161E9A4EB700E19B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */; };
 		2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811A1E97F1280042F882 /* AppDelegate.swift */; };
@@ -21,13 +21,13 @@
 
 /* Begin PBXFileReference section */
 		2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
-		2C479DD91EA0C13E00414FDC /* AddNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
+		2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ItemDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CB055D87CFC9C07B376B198 /* Pods_________.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_________.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD881171E97F1280042F882 /* Курсовая.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Курсовая.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD8811A1E97F1280042F882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
+		2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChecklistViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2CD8811F1E97F1280042F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CD881211E97F1280042F882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD881241E97F1280042F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */,
 				2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */,
 				2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */,
-				2C479DD91EA0C13E00414FDC /* AddNewItemViewController.swift */,
+				2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */,
 			);
 			path = "Курсовая";
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 				2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */,
 				2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */,
 				2C560B401E9BEE19003DB95E /* SignInViewController.swift in Sources */,
-				2C479DDA1EA0C13E00414FDC /* AddNewItemViewController.swift in Sources */,
+				2C479DDA1EA0C13E00414FDC /* ItemDetailViewController.swift in Sources */,
 				2C0FC0AA1E9FCB1F005A41B5 /* ChecklistItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

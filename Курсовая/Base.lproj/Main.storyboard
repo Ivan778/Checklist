@@ -143,7 +143,7 @@
         <!--Новый элемент-->
         <scene sceneID="qwk-7O-i5y">
             <objects>
-                <tableViewController id="61J-PO-691" customClass="AddNewItemViewController" customModule="Курсовая" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="61J-PO-691" customClass="ItemDetailViewController" customModule="Курсовая" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="smF-hY-fBu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

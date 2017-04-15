@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ChecklistViewController: UITableViewController, AddNewItemViewControllerDelegate {
+class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
     //Объявили массив для хранения элементов таблицы
     var items: [ChecklistItem]
     
@@ -41,24 +41,24 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
         super.init(coder: aDecoder)
     }
     
-    //Говорим AddNewItemViewController (перед тем как перейти на него), что принимать сообщение будем мы
+    //Говорим ItemDetailViewController (перед тем как перейти на него), что принимать сообщение будем мы
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Если требуется добавить новый элемент
         if segue.identifier == "AddItem" {
-            //Чтобы получить требуемый AddNewItemViewController, мы сначала проходим через его NavigationController
+            //Чтобы получить требуемый ItemDetailViewController, мы сначала проходим через его NavigationController
             let navigationController = segue.destination as! UINavigationController
             //Получаем ссылку на активный ViewController в NavigationController
-            let controller = navigationController.topViewController as! AddNewItemViewController
-            //Теперь, имея ссылку на AddNewItemViewController, говорим ему, что ChecklistViewController (self) и есть получатель
+            let controller = navigationController.topViewController as! ItemDetailViewController
+            //Теперь, имея ссылку на ItemDetailViewController, говорим ему, что ChecklistViewController (self) и есть получатель
             controller.delegate = self
         }
         //Если же требуется модифицировать текущий
         else if segue.identifier == "EditItem" {
-            //Чтобы получить требуемый AddNewItemViewController, мы сначала проходим через его NavigationController
+            //Чтобы получить требуемый ItemDetailViewController, мы сначала проходим через его NavigationController
             let navigationController = segue.destination as! UINavigationController
             //Получаем ссылку на активный ViewController в NavigationController
-            let controller = navigationController.topViewController as! AddNewItemViewController
-            //Теперь, имея ссылку на AddNewItemViewController, говорим ему, что ChecklistViewController (self) и есть получатель
+            let controller = navigationController.topViewController as! ItemDetailViewController
+            //Теперь, имея ссылку на ItemDetailViewController, говорим ему, что ChecklistViewController (self) и есть получатель
             controller.delegate = self
             
             if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
@@ -68,12 +68,12 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
     }
     
     //Просто возвращаемся назад в ChecklistViewController
-    func addItemViewControllerDidCancel(_ controller: AddNewItemViewController) {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
         dismiss(animated: true, completion: nil)
     }
     
     //Добавляет элемент в таблицу
-    func addItemViewController(_ controller: AddNewItemViewController, didFinishAdding item: ChecklistItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem) {
         //Просто добавив элемент в массив с ячейками, мы не отобразим изменения в таблицы
         items.append(item)
         
@@ -84,7 +84,7 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
     }
     
     //Изменяет текст текущей ячейки
-    func addItemViewController(_ controller: AddNewItemViewController, didFinishEditing item: ChecklistItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
         //Если мы можем получить индекс элемента как у пришедшего элемента
         if let index = items.index(of: item) {
             //Получаем индекс этого элемента в таблице
