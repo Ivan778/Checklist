@@ -48,6 +48,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C37514F1EA1FAB8007EC2B8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */,
+				2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */,
+				2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C3751501EA1FAEC007EC2B8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2CD8811E1E97F1280042F882 /* Main.storyboard */,
+				2CD881231E97F1280042F882 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		2CD8810E1E97F1270042F882 = {
 			isa = PBXGroup;
 			children = (
@@ -69,16 +88,13 @@
 		2CD881191E97F1280042F882 /* Курсовая */ = {
 			isa = PBXGroup;
 			children = (
+				2C3751501EA1FAEC007EC2B8 /* Storyboards */,
+				2C37514F1EA1FAB8007EC2B8 /* ViewControllers */,
 				2CD8811A1E97F1280042F882 /* AppDelegate.swift */,
-				2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */,
-				2CD8811E1E97F1280042F882 /* Main.storyboard */,
 				2CD881211E97F1280042F882 /* Assets.xcassets */,
-				2CD881231E97F1280042F882 /* LaunchScreen.storyboard */,
 				2CD881261E97F1280042F882 /* Info.plist */,
 				2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */,
-				2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */,
 				2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */,
-				2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */,
 			);
 			path = "Курсовая";
 			sourceTree = "<group>";

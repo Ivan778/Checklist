@@ -18,27 +18,13 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         //Создали массив
         items = [ChecklistItem]()
         
-        let row0Text = ChecklistItem()
-        row0Text.setText(text: "Выбить ковры")
-        items.append(row0Text)
-        
-        let row1Text = ChecklistItem()
-        row1Text.setText(text: "Прочитать книгу до 90 страницы")
-        items.append(row1Text)
-        
-        let row2Text = ChecklistItem()
-        row2Text.setText(text: "Помыть ванную")
-        items.append(row2Text)
-        
-        let row3Text = ChecklistItem()
-        row3Text.setText(text: "Повторить схемотехнику")
-        items.append(row3Text)
-        
-        let row4Text = ChecklistItem()
-        row4Text.setText(text: "Сделать 4-ую лабу по Java")
-        items.append(row4Text)
-        
         super.init(coder: aDecoder)
+        
+        loadChecklistItems()
+        
+        //print("Document's folder is \(documentsDirectory())")
+        //print("Data file path is \(dataFilePath())")
+        
     }
     
     //Говорим ItemDetailViewController (перед тем как перейти на него), что принимать сообщение будем мы
@@ -81,6 +67,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         tableView.insertRows(at: [IndexPath(row: items.count - 1, section: 0)], with: .automatic)
         
         dismiss(animated: true, completion: nil)
+        saveChecklistItems()
     }
     
     //Изменяет текст текущей ячейки
@@ -96,6 +83,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
             }
         }
         dismiss(animated: true, completion: nil)
+        saveChecklistItems()
     }
     
     override func viewDidLoad() {
@@ -144,6 +132,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         
         //Если мы нажали на элемент, он становится серым. Чтобы убрать этот эффект, воспользуемся следующим методом
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        saveChecklistItems()
     }
     
     //Метод следит за отображением галочек напротив текста каждой ячейки таблицы
@@ -175,6 +165,40 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         
         //Говорим таблице о том, что нужно удалить элемент
         tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        saveChecklistItems()
+    }
+    
+    ////////////////////////////////////////////////Работа с файлами/////////////////////////////////////////////////////
+    
+    //Путь к папке с документами
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    //Путь к файлу Checklist.plist, в котором мы будем хранить наши дела
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("Checklist.plist")
+    }
+    
+    func saveChecklistItems() {
+        let data = NSMutableData()
+        let archiver = NSKeyedArchiver(forWritingWith: data)
+        
+        archiver.encode(items, forKey: "ChecklistItems")
+        archiver.finishEncoding()
+        data.write(to: dataFilePath(), atomically: true)
+    }
+    
+    func loadChecklistItems() {
+        let path = dataFilePath()
+        
+        if let data = try? Data(contentsOf: path) {
+            let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
+            items = unarchiver.decodeObject(forKey: "ChecklistItems") as! [ChecklistItem]
+            unarchiver.finishDecoding()
+        }
     }
     
 }
