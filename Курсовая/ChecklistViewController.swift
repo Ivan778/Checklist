@@ -41,7 +41,9 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
         super.init(coder: aDecoder)
     }
     
+    //Говорим AddNewItemViewController (перед тем как перейти на него), что принимать сообщение будем мы
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Если требуется добавить новый элемент
         if segue.identifier == "AddItem" {
             //Чтобы получить требуемый AddNewItemViewController, мы сначала проходим через его NavigationController
             let navigationController = segue.destination as! UINavigationController
@@ -50,8 +52,22 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
             //Теперь, имея ссылку на AddNewItemViewController, говорим ему, что ChecklistViewController (self) и есть получатель
             controller.delegate = self
         }
+        //Если же требуется модифицировать текущий
+        else if segue.identifier == "EditItem" {
+            //Чтобы получить требуемый AddNewItemViewController, мы сначала проходим через его NavigationController
+            let navigationController = segue.destination as! UINavigationController
+            //Получаем ссылку на активный ViewController в NavigationController
+            let controller = navigationController.topViewController as! AddNewItemViewController
+            //Теперь, имея ссылку на AddNewItemViewController, говорим ему, что ChecklistViewController (self) и есть получатель
+            controller.delegate = self
+            
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+                controller.itemToEdit = items[indexPath.row]
+            }
+        }
     }
     
+    //Просто возвращаемся назад в ChecklistViewController
     func addItemViewControllerDidCancel(_ controller: AddNewItemViewController) {
         dismiss(animated: true, completion: nil)
     }
@@ -64,6 +80,21 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
         //Поэтому мы сообщаем ей об этом
         tableView.insertRows(at: [IndexPath(row: items.count - 1, section: 0)], with: .automatic)
         
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //Изменяет текст текущей ячейки
+    func addItemViewController(_ controller: AddNewItemViewController, didFinishEditing item: ChecklistItem) {
+        //Если мы можем получить индекс элемента как у пришедшего элемента
+        if let index = items.index(of: item) {
+            //Получаем индекс этого элемента в таблице
+            let indexPath = IndexPath(row: index, section: 0)
+            //Если можно получить доступ к этой ячейке
+            if let cell = tableView.cellForRow(at: indexPath) {
+                //То изменяем в ней текст
+                configureText(for: cell, with: item)
+            }
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -95,6 +126,9 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
         //Отображаем изменения на экране с помощью этого метода
         configureCheckmark(for: cell, with: items[indexPath.row])
         
+        //Отображаем изменение текста
+        configureText(for: cell, with: items[indexPath.row])
+        
         return cell
     }
     
@@ -114,13 +148,24 @@ class ChecklistViewController: UITableViewController, AddNewItemViewControllerDe
     
     //Метод следит за отображением галочек напротив текста каждой ячейки таблицы
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+        //Получили доступ к Label с нашей галочкой
+        let label = cell.viewWithTag(1001) as! UILabel
+        
         //Выводим галочку, если это нужно
         if item.getState() == true {
-            cell.accessoryType = .checkmark
+            label.text = "√"
         }
         else {
-            cell.accessoryType = .none
+            label.text = ""
         }
+    }
+    
+    //Метод изменяет текста каждой ячейки таблицы
+    func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
+        //Получили доступ к Label с нашей галочкой
+        let label = cell.viewWithTag(1000) as! UILabel
+        
+        label.text = item.getText()
     }
     
     //Метод удаляет элемент из таблицы по свайпу

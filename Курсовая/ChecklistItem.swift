@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ChecklistItem {
+class ChecklistItem: NSObject {
     private var text: String = "Новая ячейка"
     private var state: Bool = false
     

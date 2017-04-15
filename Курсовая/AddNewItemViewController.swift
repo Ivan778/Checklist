@@ -11,14 +11,28 @@ import UIKit
 protocol AddNewItemViewControllerDelegate: class {
     func addItemViewControllerDidCancel(_ controller: AddNewItemViewController)
     func addItemViewController(_ controller: AddNewItemViewController, didFinishAdding item: ChecklistItem)
+    func addItemViewController(_ controller: AddNewItemViewController, didFinishEditing item: ChecklistItem)
 }
 
 class AddNewItemViewController: UITableViewController, UITextFieldDelegate {
     //Ссылка на нашу кнопку Добавить
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
+    //Будет хранить ячейку, которую нужно модифицировать
+    var itemToEdit: ChecklistItem?
+    
     //Через неё будем посылать данные для создания новой ячейки
     weak var delegate: AddNewItemViewControllerDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let item = itemToEdit {
+            title = "Изменить"
+            whatToAddTextField.text = item.getText()
+            addBarButton.isEnabled = true
+        }
+    }
     
     //Один из методов-делегатов UITextField. Вызывается каждый раз, как пользователь вводит что-либо в поле для ввода
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -42,12 +56,17 @@ class AddNewItemViewController: UITableViewController, UITextFieldDelegate {
     
     //Возвращаемся в ChecklistViewController и говорим ему добавить в Table View элемент
     @IBAction func backToChecklistViewControllerAndAddNewItem() {
-        //Создаём ячейку
-        let item = ChecklistItem()
-        item.setText(text: whatToAddTextField.text!)
-        
-        //Отправляем её
-        delegate?.addItemViewController(self, didFinishAdding: item)
+        if let item = itemToEdit {
+            item.setText(text: whatToAddTextField.text!)
+            delegate?.addItemViewController(self, didFinishEditing: item)
+        } else {
+            //Создаём ячейку
+            let item = ChecklistItem()
+            item.setText(text: whatToAddTextField.text!)
+            
+            //Отправляем её
+            delegate?.addItemViewController(self, didFinishAdding: item)
+        }
     }
     
     //Метод не позволяет нам сделать яейку выбранной (т.е. серого цвета)
