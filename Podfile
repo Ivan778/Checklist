@@ -8,5 +8,6 @@ target 'Курсовая' do
   # Pods for Курсовая
   pod 'Firebase'
   pod 'Firebase/Auth'
+  pod ‘Firebase/Database’
   
 end

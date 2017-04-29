@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +16,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FIRApp.configure()
+        
+        //Регистрируем уведомления
+        if #available(iOS 8, *) {
+            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+        }
+        
+        //UserDefaults.standard.set(true, forKey: "loggedIn")
+        //UserDefaults.standard.synchronize()
+        
         //Этот кусок кода используется для того, чтобы устанавливать точку входа (ViewController)
         //Если пользователь уже заходил в приложение до этого, то точка входа - View Controller с таблицей
         if UserDefaults.standard.bool(forKey: "loggedIn") == true {
+            //Входим в аккаунт
+            let email = UserDefaults.standard.string(forKey: "userEmail")!
+            let password = UserDefaults.standard.string(forKey: "userPassword")!
+            
+            //Входим в аккаунт пользователя
+            FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+                if error != nil {
+                    print("Problems with signing in!");
+                } else {
+                    
+                }
+            }
+            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -34,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appDelegate.window?.rootViewController = loginVC
             appDelegate.window?.makeKeyAndVisible()
         }
-        FIRApp.configure()
         
         return true
     }
@@ -57,10 +80,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        //Если пользователь надумал выходить из приложения, то необходимо отправить его данные на сервер
+        
+        
+        
+        
     }
+    
+    
 
 
 }

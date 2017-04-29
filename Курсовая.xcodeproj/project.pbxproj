@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C08E4911EB0C618008EB580 /* FileProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08E4901EB0C618008EB580 /* FileProcessor.swift */; };
 		2C0FC0AA1E9FCB1F005A41B5 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */; };
+		2C113D7D1EA930E20005C49A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C113D7C1EA930E20005C49A /* Reachability.swift */; };
+		2C2C96CD1EA512B800303C6B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2C96CC1EA512B800303C6B /* AudioToolbox.framework */; };
+		2C46AD9B1EAF6EF900EE0CC5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46AD9A1EAF6EF900EE0CC5 /* SignInViewController.swift */; };
+		2C46AD9D1EAF753E00EE0CC5 /* SaveUserSignInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46AD9C1EAF753E00EE0CC5 /* SaveUserSignInfo.swift */; };
+		2C46AD9F1EAF796900EE0CC5 /* RegistrationAndLoginViaEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46AD9E1EAF796900EE0CC5 /* RegistrationAndLoginViaEmail.swift */; };
+		2C46ADA11EAF808400EE0CC5 /* CustomizeUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46ADA01EAF808400EE0CC5 /* CustomizeUIElements.swift */; };
 		2C479DDA1EA0C13E00414FDC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */; };
-		2C560B401E9BEE19003DB95E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */; };
+		2C5388EB1EA9C94B00363BCB /* WriteToDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5388EA1EA9C94B00363BCB /* WriteToDataBase.swift */; };
+		2C560B401E9BEE19003DB95E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C560B3F1E9BEE19003DB95E /* RegisterViewController.swift */; };
 		2C76AC161E9A4EB700E19B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */; };
+		2C9D9FFA1EAB24A800DB496D /* SettingLocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D9FF91EAB24A800DB496D /* SettingLocalNotifications.swift */; };
 		2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811A1E97F1280042F882 /* AppDelegate.swift */; };
 		2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */; };
 		2CD881201E97F1280042F882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD8811E1E97F1280042F882 /* Main.storyboard */; };
@@ -20,10 +29,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C08E4901EB0C618008EB580 /* FileProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProcessor.swift; sourceTree = "<group>"; };
 		2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		2C113D7C1EA930E20005C49A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		2C2C96CC1EA512B800303C6B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2C46AD9A1EAF6EF900EE0CC5 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2C46AD9C1EAF753E00EE0CC5 /* SaveUserSignInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUserSignInfo.swift; sourceTree = "<group>"; };
+		2C46AD9E1EAF796900EE0CC5 /* RegistrationAndLoginViaEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationAndLoginViaEmail.swift; sourceTree = "<group>"; };
+		2C46ADA01EAF808400EE0CC5 /* CustomizeUIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeUIElements.swift; sourceTree = "<group>"; };
 		2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ItemDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2C5388EA1EA9C94B00363BCB /* WriteToDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteToDataBase.swift; sourceTree = "<group>"; };
+		2C560B3F1E9BEE19003DB95E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C9D9FF91EAB24A800DB496D /* SettingLocalNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingLocalNotifications.swift; sourceTree = "<group>"; };
 		2CB055D87CFC9C07B376B198 /* Pods_________.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_________.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD881171E97F1280042F882 /* Курсовая.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Курсовая.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD8811A1E97F1280042F882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41574005479289E5BE62C7C /* Pods_________.framework in Frameworks */,
+				2C2C96CD1EA512B800303C6B /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				2CD8811C1E97F1280042F882 /* ChecklistViewController.swift */,
-				2C560B3F1E9BEE19003DB95E /* SignInViewController.swift */,
+				2C560B3F1E9BEE19003DB95E /* RegisterViewController.swift */,
 				2C479DD91EA0C13E00414FDC /* ItemDetailViewController.swift */,
+				2C46AD9A1EAF6EF900EE0CC5 /* SignInViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -65,6 +85,21 @@
 				2CD881231E97F1280042F882 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		2C9D9FF81EAB1F6A00DB496D /* MyLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */,
+				2C113D7C1EA930E20005C49A /* Reachability.swift */,
+				2C5388EA1EA9C94B00363BCB /* WriteToDataBase.swift */,
+				2C9D9FF91EAB24A800DB496D /* SettingLocalNotifications.swift */,
+				2C46AD9C1EAF753E00EE0CC5 /* SaveUserSignInfo.swift */,
+				2C46AD9E1EAF796900EE0CC5 /* RegistrationAndLoginViaEmail.swift */,
+				2C46ADA01EAF808400EE0CC5 /* CustomizeUIElements.swift */,
+				2C08E4901EB0C618008EB580 /* FileProcessor.swift */,
+			);
+			name = MyLibraries;
 			sourceTree = "<group>";
 		};
 		2CD8810E1E97F1270042F882 = {
@@ -88,13 +123,13 @@
 		2CD881191E97F1280042F882 /* Курсовая */ = {
 			isa = PBXGroup;
 			children = (
+				2C9D9FF81EAB1F6A00DB496D /* MyLibraries */,
 				2C3751501EA1FAEC007EC2B8 /* Storyboards */,
 				2C37514F1EA1FAB8007EC2B8 /* ViewControllers */,
 				2CD8811A1E97F1280042F882 /* AppDelegate.swift */,
 				2CD881211E97F1280042F882 /* Assets.xcassets */,
 				2CD881261E97F1280042F882 /* Info.plist */,
 				2C76AC151E9A4EB700E19B8E /* GoogleService-Info.plist */,
-				2C0FC0A91E9FCB1F005A41B5 /* ChecklistItem.swift */,
 			);
 			path = "Курсовая";
 			sourceTree = "<group>";
@@ -102,6 +137,7 @@
 		411C6CD3BA501832DBE79D45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C2C96CC1EA512B800303C6B /* AudioToolbox.framework */,
 				2CB055D87CFC9C07B376B198 /* Pods_________.framework */,
 			);
 			name = Frameworks;
@@ -154,6 +190,9 @@
 						DevelopmentTeam = JXCL7H2Z3W;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 0;
 							};
@@ -246,10 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C46AD9F1EAF796900EE0CC5 /* RegistrationAndLoginViaEmail.swift in Sources */,
+				2C08E4911EB0C618008EB580 /* FileProcessor.swift in Sources */,
+				2C46AD9D1EAF753E00EE0CC5 /* SaveUserSignInfo.swift in Sources */,
+				2C5388EB1EA9C94B00363BCB /* WriteToDataBase.swift in Sources */,
 				2CD8811D1E97F1280042F882 /* ChecklistViewController.swift in Sources */,
 				2CD8811B1E97F1280042F882 /* AppDelegate.swift in Sources */,
-				2C560B401E9BEE19003DB95E /* SignInViewController.swift in Sources */,
+				2C113D7D1EA930E20005C49A /* Reachability.swift in Sources */,
+				2C560B401E9BEE19003DB95E /* RegisterViewController.swift in Sources */,
+				2C46AD9B1EAF6EF900EE0CC5 /* SignInViewController.swift in Sources */,
+				2C9D9FFA1EAB24A800DB496D /* SettingLocalNotifications.swift in Sources */,
 				2C479DDA1EA0C13E00414FDC /* ItemDetailViewController.swift in Sources */,
+				2C46ADA11EAF808400EE0CC5 /* CustomizeUIElements.swift in Sources */,
 				2C0FC0AA1E9FCB1F005A41B5 /* ChecklistItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +419,7 @@
 			baseConfigurationReference = A208FE1921DFD51C2D7CE074 /* Pods-Курсовая.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Курсовая/Курсовая.entitlements";
 				DEVELOPMENT_TEAM = JXCL7H2Z3W;
 				INFOPLIST_FILE = "Курсовая/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -387,6 +435,7 @@
 			baseConfigurationReference = 8E206F747640B9E5AEBE2551 /* Pods-Курсовая.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Курсовая/Курсовая.entitlements";
 				DEVELOPMENT_TEAM = JXCL7H2Z3W;
 				INFOPLIST_FILE = "Курсовая/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
