@@ -23,9 +23,6 @@ func resetSeconds(date: Date) -> Date {
     //Получили строку из времени
     let dateS = formatter.string(from: date)
     
-    //Настроили DateFormatter на строку, из которой ему нужно вытянуть дату
-    formatter.dateFormat = "MM dd, yyyy, hh:mm aaa"
-    
     return formatter.date(from: dateS)!
 }
 
@@ -85,6 +82,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
+        
         dueDateLabel.text = formatter.string(from: dueDate)
     }
     

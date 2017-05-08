@@ -85,6 +85,7 @@ class ChecklistItem: NSObject, NSCoding {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
+        formatter.locale = Locale(identifier: "en")
         
         let dateS = formatter.string(from: date)
         
@@ -108,7 +109,9 @@ class ChecklistItem: NSObject, NSCoding {
         }
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM dd, yyyy, hh:mm aaa"
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        formatter.locale = Locale(identifier: "en")
         
         date = formatter.date(from: dictionary["date"]!)!
     }
