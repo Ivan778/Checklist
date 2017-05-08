@@ -19,6 +19,21 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     var toDoWrite = WriteToDataBase()
     
+    // Ссылка на кнопку "Выйти"
+    @IBOutlet weak var logOutButton: UIBarButtonItem!
+    // Ссылка на кнопку "+"
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    // Наш UIActivityIndicator
+    weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    // Настройка UIActivityIndicator
+    func setActivityIndicator() {
+        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        self.tableView.backgroundView = activityIndicatorView
+        self.activityIndicatorView = activityIndicatorView
+    }
+    
     //Инициализируем наш массив с делами
     required init?(coder aDecoder: NSCoder) {
         //Создали массив
@@ -27,40 +42,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         super.init(coder: aDecoder)
         
         //Подгружаем список дел в массив items
-        //loadChecklistItems()
         items = FileProcessor.loadChecklistItems()
-        
-        //Используем этот блок для загрузки данных уже зарегистрированного пользователя при его первом входе в систему
-        if UserDefaults.standard.bool(forKey: "firstTime") == false {
-            if Reachability.isConnectedToNetwork() == true {
-                //Создали ссылку на данные пользователя
-                let ref = FIRDatabase.database().reference().child(UserDefaults.standard.string(forKey: "UserID")!)
-                //Теперь получим количество данных пользователя, т.к. оно по моему усмотрению будет писаться в нулевую ноду
-                ref.child("0").observeSingleEvent(of: .value, with: { (snapshot) in
-                    //Получаем данные пользователя
-                    let value = snapshot.value as? NSDictionary
-                    //Извлекаем из них требуемое количество данных
-                    let amountOfNodes = (Int(value?["amount"] as? String ?? "0"))!
-                    
-                    //Извлекает данные из базы данных по их номерам, записывает их на устройство и выводит на экран
-                    var i = 1
-                    while (i < (amountOfNodes + 1)) {
-                        self.getDataByNumber(number: i)
-                        i += 1
-                    }
-                    
-                }) { (error) in
-                    print("Hello \(error.localizedDescription)")
-                }
-            }
-            
-            UserDefaults.standard.set(true, forKey: "firstTime")
-            UserDefaults.standard.synchronize()
-            
-        }
-        
-        //print("Document's folder is \(documentsDirectory())")
-        //print("Data file path is \(dataFilePath())")
         
     }
     
@@ -190,7 +172,9 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
                 //Получили доступ к этой ячейке
                 let cell = self.tableView.cellForRow(at: IndexPath(row: row, section: 0))
                 //Вывели галочку в ячейке, если это нужно
-                self.configureCheckmark(for: cell!, with: item)
+                if (cell != nil) {
+                    self.configureCheckmark(for: cell!, with: item)
+                }
                 
                 let notification = SettingLocalNotifications()
                 
@@ -212,7 +196,49 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setActivityIndicator()
         
+        //Используем этот блок для загрузки данных уже зарегистрированного пользователя при его первом входе в систему
+        if UserDefaults.standard.bool(forKey: "firstTime") == false {
+            if Reachability.isConnectedToNetwork() == true {
+                
+                // Делаем кнопки выхода и добавления элемента неактивными
+                self.logOutButton.isEnabled = false
+                self.addButton.isEnabled = false
+                // Запускаем наш UIActivityIndicatorView
+                self.activityIndicatorView.startAnimating()
+                
+                //Создали ссылку на данные пользователя
+                let ref = FIRDatabase.database().reference().child(UserDefaults.standard.string(forKey: "UserID")!)
+                //Теперь получим количество данных пользователя, т.к. оно по моему усмотрению будет писаться в нулевую ноду
+                ref.child("0").observeSingleEvent(of: .value, with: { (snapshot) in
+                    //Получаем данные пользователя
+                    let value = snapshot.value as? NSDictionary
+                    //Извлекаем из них требуемое количество данных
+                    let amountOfNodes = (Int(value?["amount"] as? String ?? "0"))!
+                    
+                    //Извлекает данные из базы данных по их номерам, записывает их на устройство и выводит на экран
+                    var i = 1
+                    while (i < (amountOfNodes + 1)) {
+                        self.getDataByNumber(number: i)
+                        i += 1
+                    }
+                    
+                    // Делаем кнопки выхода и добавления элемента вновь активными
+                    self.logOutButton.isEnabled = true
+                    self.addButton.isEnabled = true
+                    // Останавливаем наш UIActivityIndicatorView
+                    self.activityIndicatorView.stopAnimating()
+                    
+                }) { (error) in
+                    print("Hello \(error.localizedDescription)")
+                }
+            }
+            
+            UserDefaults.standard.set(true, forKey: "firstTime")
+            UserDefaults.standard.synchronize()
+            
+        }
     }
     
     //Этот метод говорит TableView, сколько всего ячеек будет получено
