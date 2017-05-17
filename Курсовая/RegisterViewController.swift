@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController {
         
     }
     
-    //Создаёт или входит в аккаунт пользователя по нажатию на Зарегистрироваться/Войти
+    //Создаёт или входит в аккаунт пользователя по нажатию на Зарегистрироваться
     @IBAction func createAccount(sender: AnyObject) {
         //Если есть соединение с интернетом
         if Reachability.isConnectedToNetwork() == true {

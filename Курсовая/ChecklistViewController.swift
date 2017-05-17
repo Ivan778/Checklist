@@ -118,6 +118,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
                 //То изменяем в ней текст
                 configureText(for: cell, with: item)
             }
+            
         }
         dismiss(animated: true, completion: nil)
         //saveChecklistItems()

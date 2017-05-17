@@ -93,7 +93,7 @@ class ChecklistItem: NSObject, NSCoding {
         
     }
     
-    func convertItemDictionaryToChecklistItem(dictionary: [String: String]) {
+    public func convertItemDictionaryToChecklistItem(dictionary: [String: String]) {
         text = dictionary["text"]!
         
         if ((dictionary["state"]!) == "true") {
